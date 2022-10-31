@@ -764,6 +764,63 @@ plane2.position.set(-3, 3, 0)
 plane2.rotation.set(0, 1.6, 0)
 
 
+// Cylinder 10
+
+const cylinder_11 = new Mesh(
+  new CylinderGeometry(.2, .6, .3, 16),
+  new MeshToonMaterial({
+    color: new Color("#BC0D14"),
+    wireframe: false,
+  })
+)
+
+const cylinderCtrls11 = gui.addFolder({
+  title: "Steering wheel",
+})
+
+cylinderCtrls11.addInput(cylinder_11.position, "x", {
+  label: "pos x",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls11.addInput(cylinder_11.position, "y", {
+  label: "pos y",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls11.addInput(cylinder_11.position, "z", {
+  label: "pos z",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls11.addInput(PARAMS, "color").on("change", (e) => {
+  cylinder_11.material.color = new Color(e.value)
+})
+
+// Rotations
+
+cylinderCtrls11.addInput(PARAMS, "rotate_x").on("change", (e) => {
+  cylinder_11.rotation.set(-Math.PI / e.value, 0, 0)
+})
+
+// Y axis rotates on its own axis.
+
+cylinderCtrls11.addInput(PARAMS, "rotate_z").on("change", (e) => {
+  cylinder_11.rotation.set(0, 0, -Math.PI / e.value)
+})
+
+cylinderCtrls11.addInput(cylinder_11.material, "wireframe");
+
+scene.add(cylinder_11);
+cylinder_11.position.set(0.6, 2.3, -0.8)
+cylinder_11.rotation.set(0, 0, -1.9)
+
 // Plane - soil
 
 const plane = new Mesh(
