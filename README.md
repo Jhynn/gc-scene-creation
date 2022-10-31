@@ -14,13 +14,16 @@ Este projeto foi construído para fundamentar conceitos da disciplina de Computa
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
 </p>
 
-<br>
+![Flintstones' car](flintstones_car.png)
+> Flintstones' car.
 
+<br>
+<!-- 
 <p align="center">
   <img alt="scene" src=".github/project.png" width="100%">
-</p>
+</p> -->
 
-Live demo: [https://scene.danilob.com.br](https://scene.danilob.com.br/)
+<!-- Live demo: [https://scene.danilob.com.br](https://scene.danilob.com.br/) -->
 
 ## 🚀 Tecnologias
 
@@ -48,10 +51,6 @@ npm run dev
 
 Será exibido o endereço para que consiga acessar a aplicação em `http://localhost:5173/`
 
-## :memo: Licença
+## Licença
 
 Esse projeto está sob a licença MIT.
-
----
-
-Feito com ♥ by Danilo Borges da Silva
