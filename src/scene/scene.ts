@@ -4,14 +4,13 @@ import {
   AmbientLight,
   DirectionalLight,
   Mesh,
-  SphereGeometry,
   MeshToonMaterial,
   PlaneGeometry,
   Color,
   CylinderGeometry,
   BoxGeometry,
 } from "three"
-import { renderer, updateRenderer } from "/src/core/renderer"
+import { updateRenderer } from "/src/core/renderer"
 
 import { gui } from "/src/core/gui"
 
@@ -80,19 +79,19 @@ cylinderCtrls1.addInput(cylinder_1.position, "z", {
   step: 0.1,
 })
 
-cylinderCtrls1.addInput(PARAMS, "color").on("change", (e) => {
+cylinderCtrls1.addInput(PARAMS, "color").on("change", (e: any) => {
   cylinder_1.material.color = new Color(e.value)
 })
 
 // Rotations
 
-cylinderCtrls1.addInput(PARAMS, "rotate_x").on("change", (e) => {
+cylinderCtrls1.addInput(PARAMS, "rotate_x").on("change", (e: any) => {
   cylinder_1.rotation.set(-Math.PI / e.value, 0, 0)
 })
 
 // Y axis rotates on its own axis.
 
-cylinderCtrls1.addInput(PARAMS, "rotate_z").on("change", (e) => {
+cylinderCtrls1.addInput(PARAMS, "rotate_z").on("change", (e: any) => {
   cylinder_1.rotation.set(0, 0, -Math.PI / e.value)
 })
 
@@ -138,19 +137,19 @@ cylinderCtrls2.addInput(cylinder_2.position, "z", {
   step: 0.1,
 })
 
-cylinderCtrls2.addInput(PARAMS, "color").on("change", (e) => {
+cylinderCtrls2.addInput(PARAMS, "color").on("change", (e: any) => {
   cylinder_2.material.color = new Color(e.value)
 })
 
 // Rotations
 
-cylinderCtrls2.addInput(PARAMS, "rotate_x").on("change", (e) => {
+cylinderCtrls2.addInput(PARAMS, "rotate_x").on("change", (e: any) => {
   cylinder_2.rotation.set(-Math.PI / e.value, 0, 0)
 })
 
 // Y axis rotates on its own axis.
 
-cylinderCtrls2.addInput(PARAMS, "rotate_z").on("change", (e) => {
+cylinderCtrls2.addInput(PARAMS, "rotate_z").on("change", (e: any) => {
   cylinder_2.rotation.set(0, 0, -Math.PI / e.value)
 })
 
@@ -311,19 +310,19 @@ cylinderCtrls3.addInput(cylinder_3.position, "z", {
   step: 0.1,
 })
 
-cylinderCtrls3.addInput(PARAMS, "color").on("change", (e) => {
+cylinderCtrls3.addInput(PARAMS, "color").on("change", (e: any) => {
   cylinder_3.material.color = new Color(e.value)
 })
 
 // Rotations
 
-cylinderCtrls3.addInput(PARAMS, "rotate_x").on("change", (e) => {
+cylinderCtrls3.addInput(PARAMS, "rotate_x").on("change", (e: any) => {
   cylinder_3.rotation.set(-Math.PI / e.value, 0, 0)
 })
 
 // Y axis rotates on its own axis.
 
-cylinderCtrls3.addInput(PARAMS, "rotate_z").on("change", (e) => {
+cylinderCtrls3.addInput(PARAMS, "rotate_z").on("change", (e: any) => {
   cylinder_3.rotation.set(0, 0, -Math.PI / e.value)
 })
 
@@ -368,19 +367,19 @@ cylinderCtrls4.addInput(cylinder_4.position, "z", {
   step: 0.1,
 })
 
-cylinderCtrls4.addInput(PARAMS, "color").on("change", (e) => {
+cylinderCtrls4.addInput(PARAMS, "color").on("change", (e: any) => {
   cylinder_4.material.color = new Color(e.value)
 })
 
 // Rotations
 
-cylinderCtrls4.addInput(PARAMS, "rotate_x").on("change", (e) => {
+cylinderCtrls4.addInput(PARAMS, "rotate_x").on("change", (e: any) => {
   cylinder_4.rotation.set(-Math.PI / e.value, 0, 0)
 })
 
 // Y axis rotates on its own axis.
 
-cylinderCtrls4.addInput(PARAMS, "rotate_z").on("change", (e) => {
+cylinderCtrls4.addInput(PARAMS, "rotate_z").on("change", (e: any) => {
   cylinder_4.rotation.set(0, 0, -Math.PI / e.value)
 })
 
@@ -425,19 +424,19 @@ cylinderCtrls5.addInput(cylinder_5.position, "z", {
   step: 0.1,
 })
 
-cylinderCtrls5.addInput(PARAMS, "color").on("change", (e) => {
+cylinderCtrls5.addInput(PARAMS, "color").on("change", (e: any) => {
   cylinder_5.material.color = new Color(e.value)
 })
 
 // Rotations
 
-cylinderCtrls5.addInput(PARAMS, "rotate_x").on("change", (e) => {
+cylinderCtrls5.addInput(PARAMS, "rotate_x").on("change", (e: any) => {
   cylinder_5.rotation.set(-Math.PI / e.value, 0, 0)
 })
 
 // Y axis rotates on its own axis.
 
-cylinderCtrls5.addInput(PARAMS, "rotate_z").on("change", (e) => {
+cylinderCtrls5.addInput(PARAMS, "rotate_z").on("change", (e: any) => {
   cylinder_5.rotation.set(0, 0, -Math.PI / e.value)
 })
 
@@ -482,19 +481,19 @@ cylinderCtrls6.addInput(cylinder_6.position, "z", {
   step: 0.1,
 })
 
-cylinderCtrls6.addInput(PARAMS, "color").on("change", (e) => {
+cylinderCtrls6.addInput(PARAMS, "color").on("change", (e: any) => {
   cylinder_6.material.color = new Color(e.value)
 })
 
 // Rotations
 
-cylinderCtrls6.addInput(PARAMS, "rotate_x").on("change", (e) => {
+cylinderCtrls6.addInput(PARAMS, "rotate_x").on("change", (e: any) => {
   cylinder_6.rotation.set(-Math.PI / e.value, 0, 0)
 })
 
 // Y axis rotates on its own axis.
 
-cylinderCtrls6.addInput(PARAMS, "rotate_z").on("change", (e) => {
+cylinderCtrls6.addInput(PARAMS, "rotate_z").on("change", (e: any) => {
   cylinder_6.rotation.set(0, 0, -Math.PI / e.value)
 })
 
@@ -539,19 +538,19 @@ cylinderCtrls7.addInput(cylinder_7.position, "z", {
   step: 0.1,
 })
 
-cylinderCtrls7.addInput(PARAMS, "color").on("change", (e) => {
+cylinderCtrls7.addInput(PARAMS, "color").on("change", (e: any) => {
   cylinder_7.material.color = new Color(e.value)
 })
 
 // Rotations
 
-cylinderCtrls7.addInput(PARAMS, "rotate_x").on("change", (e) => {
+cylinderCtrls7.addInput(PARAMS, "rotate_x").on("change", (e: any) => {
   cylinder_7.rotation.set(-Math.PI / e.value, 0, 0)
 })
 
 // Y axis rotates on its own axis.
 
-cylinderCtrls7.addInput(PARAMS, "rotate_z").on("change", (e) => {
+cylinderCtrls7.addInput(PARAMS, "rotate_z").on("change", (e: any) => {
   cylinder_7.rotation.set(0, 0, -Math.PI / e.value)
 })
 
@@ -596,19 +595,19 @@ cylinderCtrls8.addInput(cylinder_8.position, "z", {
   step: 0.1,
 })
 
-cylinderCtrls8.addInput(PARAMS, "color").on("change", (e) => {
+cylinderCtrls8.addInput(PARAMS, "color").on("change", (e: any) => {
   cylinder_8.material.color = new Color(e.value)
 })
 
 // Rotations
 
-cylinderCtrls8.addInput(PARAMS, "rotate_x").on("change", (e) => {
+cylinderCtrls8.addInput(PARAMS, "rotate_x").on("change", (e: any) => {
   cylinder_8.rotation.set(-Math.PI / e.value, 0, 0)
 })
 
 // Y axis rotates on its own axis.
 
-cylinderCtrls8.addInput(PARAMS, "rotate_z").on("change", (e) => {
+cylinderCtrls8.addInput(PARAMS, "rotate_z").on("change", (e: any) => {
   cylinder_8.rotation.set(0, 0, -Math.PI / e.value)
 })
 
@@ -653,19 +652,19 @@ cylinderCtrls9.addInput(cylinder_9.position, "z", {
   step: 0.1,
 })
 
-cylinderCtrls9.addInput(PARAMS, "color").on("change", (e) => {
+cylinderCtrls9.addInput(PARAMS, "color").on("change", (e: any) => {
   cylinder_9.material.color = new Color(e.value)
 })
 
 // Rotations
 
-cylinderCtrls9.addInput(PARAMS, "rotate_x").on("change", (e) => {
+cylinderCtrls9.addInput(PARAMS, "rotate_x").on("change", (e: any) => {
   cylinder_9.rotation.set(-Math.PI / e.value, 0, 0)
 })
 
 // Y axis rotates on its own axis.
 
-cylinderCtrls9.addInput(PARAMS, "rotate_z").on("change", (e) => {
+cylinderCtrls9.addInput(PARAMS, "rotate_z").on("change", (e: any) => {
   cylinder_9.rotation.set(0, 0, -Math.PI / e.value)
 })
 
@@ -710,19 +709,19 @@ cylinderCtrls10.addInput(cylinder_10.position, "z", {
   step: 0.1,
 })
 
-cylinderCtrls10.addInput(PARAMS, "color").on("change", (e) => {
+cylinderCtrls10.addInput(PARAMS, "color").on("change", (e: any) => {
   cylinder_10.material.color = new Color(e.value)
 })
 
 // Rotations
 
-cylinderCtrls10.addInput(PARAMS, "rotate_x").on("change", (e) => {
+cylinderCtrls10.addInput(PARAMS, "rotate_x").on("change", (e: any) => {
   cylinder_10.rotation.set(-Math.PI / e.value, 0, 0)
 })
 
 // Y axis rotates on its own axis.
 
-cylinderCtrls10.addInput(PARAMS, "rotate_z").on("change", (e) => {
+cylinderCtrls10.addInput(PARAMS, "rotate_z").on("change", (e: any) => {
   cylinder_10.rotation.set(0, 0, -Math.PI / e.value)
 })
 
@@ -799,19 +798,19 @@ cylinderCtrls11.addInput(cylinder_11.position, "z", {
   step: 0.1,
 })
 
-cylinderCtrls11.addInput(PARAMS, "color").on("change", (e) => {
+cylinderCtrls11.addInput(PARAMS, "color").on("change", (e: any) => {
   cylinder_11.material.color = new Color(e.value)
 })
 
 // Rotations
 
-cylinderCtrls11.addInput(PARAMS, "rotate_x").on("change", (e) => {
+cylinderCtrls11.addInput(PARAMS, "rotate_x").on("change", (e: any) => {
   cylinder_11.rotation.set(-Math.PI / e.value, 0, 0)
 })
 
 // Y axis rotates on its own axis.
 
-cylinderCtrls11.addInput(PARAMS, "rotate_z").on("change", (e) => {
+cylinderCtrls11.addInput(PARAMS, "rotate_z").on("change", (e: any) => {
   cylinder_11.rotation.set(0, 0, -Math.PI / e.value)
 })
 
