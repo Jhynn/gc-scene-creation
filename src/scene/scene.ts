@@ -44,157 +44,19 @@ const PARAMS = {
   rotate_y: 0,
   rotate_z: 0,
 }
-// Sphere 1
-const sphere_1 = new Mesh(
-  new SphereGeometry(0.75, 32, 32),
-  new MeshToonMaterial({
-    color: new Color(PARAMS.color),
-    wireframe: false,
-  })
-)
-
-sphere_1.castShadow = true
-
-const sphereCtrls1 = gui.addFolder({
-  title: "Sphere",
-})
-
-sphereCtrls1.addInput(sphere_1.position, "x", {
-  label: "pos x",
-  min: -10,
-  max: 10,
-  step: 0.1,
-})
-
-sphereCtrls1.addInput(sphere_1.position, "y", {
-  label: "pos y",
-  min: -10,
-  max: 10,
-  step: 0.1,
-})
-
-sphereCtrls1.addInput(sphere_1.position, "z", {
-  label: "pos z",
-  min: -10,
-  max: 10,
-  step: 0.1,
-})
-
-sphereCtrls1.addInput(PARAMS, "color").on("change", (e) => {
-  sphere_1.material.color = new Color(e.value)
-})
-
-sphereCtrls1.addInput(sphere_1.material, "wireframe")
-
-sphere_1.position.set(8, 3, 0)
-scene.add(sphere_1)
-
-// Sphere 2
-
-const sphere_2 = new Mesh(
-  new SphereGeometry(0.75, 32, 32),
-  new MeshToonMaterial({
-    color: new Color(PARAMS.color),
-    wireframe: false,
-  })
-)
-
-sphere_2.position.set(8, 2, 0)
-sphere_2.castShadow = true
-
-const sphereCtrls2 = gui.addFolder({
-  title: "Sphere",
-})
-
-sphereCtrls2.addInput(sphere_2.position, "x", {
-  label: "pos x",
-  min: -10,
-  max: 10,
-  step: 0.1,
-})
-
-sphereCtrls2.addInput(sphere_2.position, "y", {
-  label: "pos y",
-  min: -10,
-  max: 10,
-  step: 0.1,
-})
-
-sphereCtrls2.addInput(sphere_2.position, "z", {
-  label: "pos z",
-  min: -10,
-  max: 10,
-  step: 0.1,
-})
-
-sphereCtrls2.addInput(PARAMS, "color").on("change", (e) => {
-  sphere_2.material.color = new Color(e.value)
-})
-
-sphereCtrls2.addInput(sphere_2.material, "wireframe")
-
-sphere_2.position.set(8, 3, 2)
-scene.add(sphere_2)
-
-// Sphere 3
-
-const sphere_3 = new Mesh(
-  new SphereGeometry(0.75, 32, 32),
-  new MeshToonMaterial({
-    color: new Color(PARAMS.color),
-    wireframe: false,
-  })
-)
-
-sphere_3.position.set(8, 2, 0)
-sphere_3.castShadow = true
-
-const sphereCtrls3 = gui.addFolder({
-  title: "Sphere",
-})
-
-sphereCtrls3.addInput(sphere_3.position, "x", {
-  label: "pos x",
-  min: -10,
-  max: 10,
-  step: 0.1,
-})
-
-sphereCtrls3.addInput(sphere_3.position, "y", {
-  label: "pos y",
-  min: -10,
-  max: 10,
-  step: 0.1,
-})
-
-sphereCtrls3.addInput(sphere_3.position, "z", {
-  label: "pos z",
-  min: -10,
-  max: 10,
-  step: 0.1,
-})
-
-sphereCtrls3.addInput(PARAMS, "color").on("change", (e) => {
-  sphere_3.material.color = new Color(e.value)
-})
-
-sphereCtrls3.addInput(sphere_3.material, "wireframe")
-
-sphere_3.position.set(8, 3, -2)
-scene.add(sphere_3)
 
 // Cylinder 1
 
 const cylinder_1 = new Mesh(
-  new CylinderGeometry(1, 1, 4, 10),
+  new CylinderGeometry(1, 1, 5, 10),
   new MeshToonMaterial({
-    color: new Color(PARAMS.color),
+    color: new Color("#FFFFDA"),
     wireframe: false,
   })
 )
 
 const cylinderCtrls1 = gui.addFolder({
-  title: "Cylinder 1",
+  title: "Front tire",
 })
 
 cylinderCtrls1.addInput(cylinder_1.position, "x", {
@@ -236,7 +98,7 @@ cylinderCtrls1.addInput(PARAMS, "rotate_z").on("change", (e) => {
 
 cylinderCtrls1.addInput(cylinder_1.material, "wireframe");
 
-cylinder_1.position.set(4, 1, 0)
+cylinder_1.position.set(2, 1, 0)
 cylinder_1.rotation.set(1.57, 0, 0)
 
 scene.add(cylinder_1);
@@ -244,15 +106,15 @@ scene.add(cylinder_1);
 // Cylinder 2
 
 const cylinder_2 = new Mesh(
-  new CylinderGeometry(1, 1, 4, 10),
+  new CylinderGeometry(1, 1, 5, 10),
   new MeshToonMaterial({
-    color: new Color(PARAMS.color),
+    color: new Color("#FFFFDA"),
     wireframe: false,
   })
 )
 
 const cylinderCtrls2 = gui.addFolder({
-  title: "cylinder_2",
+  title: "Rear tire",
 })
 
 cylinderCtrls2.addInput(cylinder_2.position, "x", {
@@ -301,156 +163,591 @@ cylinder_2.rotation.set(1.57, 0, 0)
 // Cube 1
 
 const cube_1 = new Mesh(
-  new BoxGeometry(2, 2, 2, 10),
+  new BoxGeometry(0.6, 2.4, 4, 10),
   new MeshToonMaterial({
-    color: new Color(PARAMS.color),
+    color: new Color("#FFFFDA"),
     wireframe: false,
   })
 )
 
 const cubeCtrls1 = gui.addFolder({
-  title: "Cube 1",
+  title: "Backrest",
 })
 
-cubeCtrls1.addInput(cylinder_2.position, "x", {
+cubeCtrls1.addInput(cube_1.position, "x", {
   label: "pos x",
   min: -10,
   max: 10,
   step: 0.1,
 })
 
-cubeCtrls1.addInput(cylinder_2.position, "y", {
+cubeCtrls1.addInput(cube_1.position, "y", {
   label: "pos y",
   min: -10,
   max: 10,
   step: 0.1,
 })
 
-cubeCtrls1.addInput(cylinder_2.position, "z", {
+cubeCtrls1.addInput(cube_1.position, "z", {
   label: "pos z",
   min: -10,
   max: 10,
   step: 0.1,
 })
 
-cube_1.position.set(-1, 4, 0)
+cube_1.position.set(-2.66, 2.2, 0)
 scene.add(cube_1);
 
 // Cube 2
 
 const cube_2 = new Mesh(
-  new BoxGeometry(2, 2, 2, 10),
+  new BoxGeometry(0.6, 1.8, 4, 10),
   new MeshToonMaterial({
-    color: new Color(PARAMS.color),
+    color: new Color("#FFFFDA"),
     wireframe: false,
   })
 )
 
 const cubeCtrls2 = gui.addFolder({
-  title: "Cube 1",
+  title: "Panel",
 })
 
-cubeCtrls2.addInput(cylinder_2.position, "x", {
+cubeCtrls2.addInput(cube_2.position, "x", {
   label: "pos x",
   min: -10,
   max: 10,
   step: 0.1,
 })
 
-cubeCtrls2.addInput(cylinder_2.position, "y", {
+cubeCtrls2.addInput(cube_2.position, "y", {
   label: "pos y",
   min: -10,
   max: 10,
   step: 0.1,
 })
 
-cubeCtrls2.addInput(cylinder_2.position, "z", {
+cubeCtrls2.addInput(cube_2.position, "z", {
   label: "pos z",
   min: -10,
   max: 10,
   step: 0.1,
 })
 
-cube_2.position.set(2, 4, 0)
+cube_2.rotation.set(0, 0, -0.5)
+cube_2.position.set(1, 2, 0)
 scene.add(cube_2);
 
 // Cube 3
 
 const cube_3 = new Mesh(
-  new BoxGeometry(2, 2, 2, 10),
+  new BoxGeometry(0.6, 1.3, 4, 10),
   new MeshToonMaterial({
-    color: new Color(PARAMS.color),
+    color: new Color("#FFFFDA"),
     wireframe: false,
   })
 )
 
 const cubeCtrls3 = gui.addFolder({
-  title: "Cube 1",
+  title: "Seat",
 })
 
-cubeCtrls3.addInput(cylinder_2.position, "x", {
+cubeCtrls3.addInput(cube_3.position, "x", {
   label: "pos x",
   min: -10,
   max: 10,
   step: 0.1,
 })
 
-cubeCtrls3.addInput(cylinder_2.position, "y", {
+cubeCtrls3.addInput(cube_3.position, "y", {
   label: "pos y",
   min: -10,
   max: 10,
   step: 0.1,
 })
 
-cubeCtrls3.addInput(cylinder_2.position, "z", {
+cubeCtrls3.addInput(cube_3.position, "z", {
   label: "pos z",
   min: -10,
   max: 10,
   step: 0.1,
 })
 
-cube_3.position.set(5, 4, 0)
+cube_3.position.set(-1.8, 1.32, 0)
+cube_3.rotation.set(0, 0, 1.6)
 scene.add(cube_3);
 
-// Cube 4
+// Cylinder 3
 
-const cube_4 = new Mesh(
-  new BoxGeometry(2, 2, 2, 10),
+const cylinder_3 = new Mesh(
+  new CylinderGeometry(0.1, 0.1, 7, 10),
   new MeshToonMaterial({
-    color: new Color(PARAMS.color),
+    color: new Color("#BC4D18"),
     wireframe: false,
   })
 )
 
-const cubeCtrls4 = gui.addFolder({
-  title: "Cube 1",
+const cylinderCtrls3 = gui.addFolder({
+  title: "Back axis",
 })
 
-cubeCtrls4.addInput(cylinder_2.position, "x", {
+cylinderCtrls3.addInput(cylinder_3.position, "x", {
   label: "pos x",
   min: -10,
   max: 10,
   step: 0.1,
 })
 
-cubeCtrls4.addInput(cylinder_2.position, "y", {
+cylinderCtrls3.addInput(cylinder_3.position, "y", {
   label: "pos y",
   min: -10,
   max: 10,
   step: 0.1,
 })
 
-cubeCtrls4.addInput(cylinder_2.position, "z", {
+cylinderCtrls3.addInput(cylinder_3.position, "z", {
   label: "pos z",
   min: -10,
   max: 10,
   step: 0.1,
 })
 
-cube_4.position.set(-4, 4, 0)
-scene.add(cube_4);
+cylinderCtrls3.addInput(PARAMS, "color").on("change", (e) => {
+  cylinder_3.material.color = new Color(e.value)
+})
 
-// Plane
+// Rotations
+
+cylinderCtrls3.addInput(PARAMS, "rotate_x").on("change", (e) => {
+  cylinder_3.rotation.set(-Math.PI / e.value, 0, 0)
+})
+
+// Y axis rotates on its own axis.
+
+cylinderCtrls3.addInput(PARAMS, "rotate_z").on("change", (e) => {
+  cylinder_3.rotation.set(0, 0, -Math.PI / e.value)
+})
+
+cylinderCtrls3.addInput(cylinder_3.material, "wireframe");
+
+scene.add(cylinder_3);
+cylinder_3.position.set(-4, 1, 0)
+cylinder_3.rotation.set(1.57, 0, 0)
+
+// Cylinder 4
+
+const cylinder_4 = new Mesh(
+  new CylinderGeometry(0.1, 0.1, 7, 10),
+  new MeshToonMaterial({
+    color: new Color("#BC4D18"),
+    wireframe: false,
+  })
+)
+
+const cylinderCtrls4 = gui.addFolder({
+  title: "Front axis",
+})
+
+cylinderCtrls4.addInput(cylinder_4.position, "x", {
+  label: "pos x",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls4.addInput(cylinder_4.position, "y", {
+  label: "pos y",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls4.addInput(cylinder_4.position, "z", {
+  label: "pos z",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls4.addInput(PARAMS, "color").on("change", (e) => {
+  cylinder_4.material.color = new Color(e.value)
+})
+
+// Rotations
+
+cylinderCtrls4.addInput(PARAMS, "rotate_x").on("change", (e) => {
+  cylinder_4.rotation.set(-Math.PI / e.value, 0, 0)
+})
+
+// Y axis rotates on its own axis.
+
+cylinderCtrls4.addInput(PARAMS, "rotate_z").on("change", (e) => {
+  cylinder_4.rotation.set(0, 0, -Math.PI / e.value)
+})
+
+cylinderCtrls4.addInput(cylinder_4.material, "wireframe");
+
+scene.add(cylinder_4);
+cylinder_4.position.set(2, 1, 0)
+cylinder_4.rotation.set(1.57, 0, 0)
+
+// Cylinder 5
+
+const cylinder_5 = new Mesh(
+  new CylinderGeometry(.35, .35, 7.5, 16),
+  new MeshToonMaterial({
+    color: new Color("#BC0D14"),
+    wireframe: false,
+  })
+)
+
+const cylinderCtrls5 = gui.addFolder({
+  title: "Right axis",
+})
+
+cylinderCtrls5.addInput(cylinder_5.position, "x", {
+  label: "pos x",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls5.addInput(cylinder_5.position, "y", {
+  label: "pos y",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls5.addInput(cylinder_5.position, "z", {
+  label: "pos z",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls5.addInput(PARAMS, "color").on("change", (e) => {
+  cylinder_5.material.color = new Color(e.value)
+})
+
+// Rotations
+
+cylinderCtrls5.addInput(PARAMS, "rotate_x").on("change", (e) => {
+  cylinder_5.rotation.set(-Math.PI / e.value, 0, 0)
+})
+
+// Y axis rotates on its own axis.
+
+cylinderCtrls5.addInput(PARAMS, "rotate_z").on("change", (e) => {
+  cylinder_5.rotation.set(0, 0, -Math.PI / e.value)
+})
+
+cylinderCtrls5.addInput(cylinder_5.material, "wireframe");
+
+scene.add(cylinder_5);
+cylinder_5.position.set(-1, 1, 3)
+cylinder_5.rotation.set(0, 0, 1.56)
+
+// Cylinder 6
+
+const cylinder_6 = new Mesh(
+  new CylinderGeometry(.35, .35, 7.5, 16),
+  new MeshToonMaterial({
+    color: new Color("#BC0D14"),
+    wireframe: false,
+  })
+)
+
+const cylinderCtrls6 = gui.addFolder({
+  title: "Right axis",
+})
+
+cylinderCtrls6.addInput(cylinder_6.position, "x", {
+  label: "pos x",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls6.addInput(cylinder_6.position, "y", {
+  label: "pos y",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls6.addInput(cylinder_6.position, "z", {
+  label: "pos z",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls6.addInput(PARAMS, "color").on("change", (e) => {
+  cylinder_6.material.color = new Color(e.value)
+})
+
+// Rotations
+
+cylinderCtrls6.addInput(PARAMS, "rotate_x").on("change", (e) => {
+  cylinder_6.rotation.set(-Math.PI / e.value, 0, 0)
+})
+
+// Y axis rotates on its own axis.
+
+cylinderCtrls6.addInput(PARAMS, "rotate_z").on("change", (e) => {
+  cylinder_6.rotation.set(0, 0, -Math.PI / e.value)
+})
+
+cylinderCtrls6.addInput(cylinder_6.material, "wireframe");
+
+scene.add(cylinder_6);
+cylinder_6.position.set(-1, 1, -3)
+cylinder_6.rotation.set(0, 0, 1.56)
+
+// Cylinder 7
+
+const cylinder_7 = new Mesh(
+  new CylinderGeometry(.15, .15, 5, 16),
+  new MeshToonMaterial({
+    color: new Color("#BC0D14"),
+    wireframe: false,
+  })
+)
+
+const cylinderCtrls7 = gui.addFolder({
+  title: "Left support",
+})
+
+cylinderCtrls7.addInput(cylinder_7.position, "x", {
+  label: "pos x",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls7.addInput(cylinder_7.position, "y", {
+  label: "pos y",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls7.addInput(cylinder_7.position, "z", {
+  label: "pos z",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls7.addInput(PARAMS, "color").on("change", (e) => {
+  cylinder_7.material.color = new Color(e.value)
+})
+
+// Rotations
+
+cylinderCtrls7.addInput(PARAMS, "rotate_x").on("change", (e) => {
+  cylinder_7.rotation.set(-Math.PI / e.value, 0, 0)
+})
+
+// Y axis rotates on its own axis.
+
+cylinderCtrls7.addInput(PARAMS, "rotate_z").on("change", (e) => {
+  cylinder_7.rotation.set(0, 0, -Math.PI / e.value)
+})
+
+cylinderCtrls7.addInput(cylinder_7.material, "wireframe");
+
+scene.add(cylinder_7);
+cylinder_7.position.set(-3, 3, -3)
+cylinder_7.rotation.set(0, 0, 0)
+
+// Cylinder 8
+
+const cylinder_8 = new Mesh(
+  new CylinderGeometry(.15, .15, 5, 16),
+  new MeshToonMaterial({
+    color: new Color("#BC0D14"),
+    wireframe: false,
+  })
+)
+
+const cylinderCtrls8 = gui.addFolder({
+  title: "Right support",
+})
+
+cylinderCtrls8.addInput(cylinder_8.position, "x", {
+  label: "pos x",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls8.addInput(cylinder_8.position, "y", {
+  label: "pos y",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls8.addInput(cylinder_8.position, "z", {
+  label: "pos z",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls8.addInput(PARAMS, "color").on("change", (e) => {
+  cylinder_8.material.color = new Color(e.value)
+})
+
+// Rotations
+
+cylinderCtrls8.addInput(PARAMS, "rotate_x").on("change", (e) => {
+  cylinder_8.rotation.set(-Math.PI / e.value, 0, 0)
+})
+
+// Y axis rotates on its own axis.
+
+cylinderCtrls8.addInput(PARAMS, "rotate_z").on("change", (e) => {
+  cylinder_8.rotation.set(0, 0, -Math.PI / e.value)
+})
+
+cylinderCtrls8.addInput(cylinder_8.material, "wireframe");
+
+scene.add(cylinder_8);
+cylinder_8.position.set(-3, 3, 3)
+cylinder_8.rotation.set(0, 0, 0)
+
+// Cylinder 9
+
+const cylinder_9 = new Mesh(
+  new CylinderGeometry(.15, .15, 3.5, 16),
+  new MeshToonMaterial({
+    color: new Color("#BC0D14"),
+    wireframe: false,
+  })
+)
+
+const cylinderCtrls9 = gui.addFolder({
+  title: "Upper-right support",
+})
+
+cylinderCtrls9.addInput(cylinder_9.position, "x", {
+  label: "pos x",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls9.addInput(cylinder_9.position, "y", {
+  label: "pos y",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls9.addInput(cylinder_9.position, "z", {
+  label: "pos z",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls9.addInput(PARAMS, "color").on("change", (e) => {
+  cylinder_9.material.color = new Color(e.value)
+})
+
+// Rotations
+
+cylinderCtrls9.addInput(PARAMS, "rotate_x").on("change", (e) => {
+  cylinder_9.rotation.set(-Math.PI / e.value, 0, 0)
+})
+
+// Y axis rotates on its own axis.
+
+cylinderCtrls9.addInput(PARAMS, "rotate_z").on("change", (e) => {
+  cylinder_9.rotation.set(0, 0, -Math.PI / e.value)
+})
+
+cylinderCtrls9.addInput(cylinder_9.material, "wireframe");
+
+scene.add(cylinder_9);
+cylinder_9.position.set(-1.7, 5, 3)
+cylinder_9.rotation.set(0, 0, 1.6)
+
+// Cylinder 10
+
+const cylinder_10 = new Mesh(
+  new CylinderGeometry(.15, .15, 3.5, 16),
+  new MeshToonMaterial({
+    color: new Color("#BC0D14"),
+    wireframe: false,
+  })
+)
+
+const cylinderCtrls10 = gui.addFolder({
+  title: "Upper-left support",
+})
+
+cylinderCtrls10.addInput(cylinder_10.position, "x", {
+  label: "pos x",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls10.addInput(cylinder_10.position, "y", {
+  label: "pos y",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls10.addInput(cylinder_10.position, "z", {
+  label: "pos z",
+  min: -10,
+  max: 10,
+  step: 0.1,
+})
+
+cylinderCtrls10.addInput(PARAMS, "color").on("change", (e) => {
+  cylinder_10.material.color = new Color(e.value)
+})
+
+// Rotations
+
+cylinderCtrls10.addInput(PARAMS, "rotate_x").on("change", (e) => {
+  cylinder_10.rotation.set(-Math.PI / e.value, 0, 0)
+})
+
+// Y axis rotates on its own axis.
+
+cylinderCtrls10.addInput(PARAMS, "rotate_z").on("change", (e) => {
+  cylinder_10.rotation.set(0, 0, -Math.PI / e.value)
+})
+
+cylinderCtrls10.addInput(cylinder_10.material, "wireframe");
+
+scene.add(cylinder_10);
+cylinder_10.position.set(-1.7, 5, -3)
+cylinder_10.rotation.set(0, 0, 1.6)
+
+// Plane - roof
+
+const plane1 = new Mesh(
+  new PlaneGeometry(4, 3, 8, 10),
+  new MeshToonMaterial({
+    color: new Color("#FFF"),
+  })
+)
+
+plane1.receiveShadow = true
+plane1.rotation.set(-Math.PI / 2, 0, 0)
+scene.add(plane1)
+
+plane1.position.set(-2, 5, 0)
+
+// Plane - soil
 
 const plane = new Mesh(
   new PlaneGeometry(40, 40, 40, 40),
