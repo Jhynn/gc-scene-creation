@@ -735,7 +735,7 @@ cylinder_10.rotation.set(0, 0, 1.6)
 // Plane - roof
 
 const plane1 = new Mesh(
-  new PlaneGeometry(4, 3, 8, 10),
+  new PlaneGeometry(3.5, 6, 8, 10),
   new MeshToonMaterial({
     color: new Color("#FFF"),
   })
@@ -745,7 +745,24 @@ plane1.receiveShadow = true
 plane1.rotation.set(-Math.PI / 2, 0, 0)
 scene.add(plane1)
 
-plane1.position.set(-2, 5, 0)
+plane1.position.set(-1.6, 5, 0)
+
+// Plane - back
+
+const plane2 = new Mesh(
+  new PlaneGeometry(5.8, 4, 8, 10),
+  new MeshToonMaterial({
+    color: new Color("#FFF"),
+  })
+)
+
+plane2.receiveShadow = true
+plane2.rotation.set(-Math.PI / 2, 0, 0)
+scene.add(plane2)
+
+plane2.position.set(-3, 3, 0)
+plane2.rotation.set(0, 1.6, 0)
+
 
 // Plane - soil
 
